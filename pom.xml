@@ -5,6 +5,7 @@
 	<modules>
 		<module>helloworld</module>
 		<module>loginform</module>
+		<module>userdetails</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
