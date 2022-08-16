@@ -7,6 +7,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import org.springframework.security.web.util.matcher.OrRequestMatcher;
 
 @Configuration
 public class SecurityConfiguration{
@@ -64,6 +66,15 @@ public class SecurityConfiguration{
                 .usernameParameter("uname") //用户名参数
                 .passwordParameter("passwd") //密码参数
                 .permitAll() //表示登录页不做拦截
+                .and()
+                .logout()
+                .invalidateHttpSession(true) //是否使session失效 默认为true
+                .clearAuthentication(true)  //是否清除认证信息，默认为true
+                .logoutSuccessUrl("/mylogin.html")  //注销登录后的跳转地址
+                .logoutRequestMatcher(new OrRequestMatcher(
+                        new AntPathRequestMatcher("/logout1", "GET"),
+                        new AntPathRequestMatcher("/logout2", "POST")
+                ))
                 .and()
                 .csrf().disable(); //禁用CSRF防御
         return http.build();

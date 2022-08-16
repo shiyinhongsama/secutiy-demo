@@ -31,6 +31,7 @@
                     <include>*.xml</include>
                     <include>*.properties</include>
                     <include>**/*.html</include>
+                    <include>**/*.yml</include>
                 </includes>
             </resource>
         </resources>

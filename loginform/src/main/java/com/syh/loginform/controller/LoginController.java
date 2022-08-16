@@ -17,22 +17,24 @@ public class LoginController {
     public String hello() {
         return "hello spring security";
     }
-//    @RequestMapping("/authentication")
-//    public void authentication(Authentication authentication) {
-//        System.out.println("authentication = " + authentication);
-//    }
-//    @RequestMapping("/principal")
-//    public void principal(Principal principal, HttpServletRequest req) {
-//        System.out.println("req.getClass() = " + req.getClass());
-//        System.out.println("principal = " + principal);
-//    }
-//    @RequestMapping("/info")
-//    public void info(HttpServletRequest req) {
-//        String remoteUser = req.getRemoteUser();
-//        Authentication auth = ((Authentication) req.getUserPrincipal());
-//        boolean admin = req.isUserInRole("admin");
-//        System.out.println("remoteUser = " + remoteUser);
-//        System.out.println("auth.getName() = " + auth.getName());
-//        System.out.println("admin = " + admin);
-//    }
+
+
+    @RequestMapping("/authentication")
+    public void authentication(Authentication authentication) {
+        System.out.println("authentication = " + authentication);
+    }
+    @RequestMapping("/principal")
+    public void principal(Principal principal, HttpServletRequest req) {
+        System.out.println("req.getClass() = " + req.getClass());
+        System.out.println("principal = " + principal);
+    }
+    @RequestMapping("/info")
+    public void info(HttpServletRequest req) {
+        String remoteUser = req.getRemoteUser();
+        Principal userPrincipal = req.getUserPrincipal();
+        boolean admin = req.isUserInRole("admin");
+        System.out.println("remoteUser = " + remoteUser);
+        System.out.println("userPrincipal.getName() = " + userPrincipal.getName());
+        System.out.println("admin = " + admin);
+    }
 }
