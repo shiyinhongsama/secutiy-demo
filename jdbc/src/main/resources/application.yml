@@ -1,0 +1,9 @@
+server:
+  port: 8888
+
+spring:
+  datasource:
+    username: postgres
+    password: shiyinhong
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:15432/postgres?currentSchema=public
