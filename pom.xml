@@ -9,6 +9,7 @@
 		<module>jdbc</module>
 		<module>mybatis</module>
         <module>multipleuserservice</module>
+        <module>kaptcha</module>
     </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
