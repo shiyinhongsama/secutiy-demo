@@ -11,6 +11,7 @@
         <module>multipleuserservice</module>
         <module>kaptcha</module>
 		<module>oauth2login</module>
+		<module>oauth2authserver</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
